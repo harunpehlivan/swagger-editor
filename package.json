@@ -36,7 +36,9 @@
     "serve-static": "http-server -i -a 0.0.0.0 -p 3001",
     "prestart": "npm install",
     "start": "npm-run-all --parallel serve-static open-static",
-    "watch": "webpack --config webpack.config.js --watch --progress"
+    "watch": "webpack --config webpack.config.js --watch --progress",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "boron": "^0.2.3",
@@ -51,7 +53,8 @@
     "react-file-download": "^0.3.2",
     "react-redux": "^4.x.x",
     "redux": "^3.x.x",
-    "swagger-ui": "^3.0.6"
+    "swagger-ui": "^3.0.6",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "autoprefixer": "6.6.1",
@@ -117,5 +120,6 @@
   ],
   "optionalDependencies": {
     "webpack-dev-server": "1.14.0"
-  }
+  },
+  "snyk": true
 }
